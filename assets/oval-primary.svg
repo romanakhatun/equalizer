@@ -1,0 +1,18 @@
+<svg viewBox="0 0 655.828 655.828" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="655.828125" height="655.828125" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_0">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="135.914093" />
+		</g>
+		<filter id="filter_0" width="655.828125" height="655.828125" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="45.3046989" result="effect_layerBlur_1" />
+		</filter>
+	</defs>
+	<g style="mix-blend-mode:normal">
+		<g filter="url(#filter_0)">
+			<circle id="Oval Copy 2" cx="327.914062" cy="327.914062" r="192" opacity="0.150000006" fill="rgb(255,122.92,63.5845)" />
+			<circle id="Oval Copy 2" cx="327.914062" cy="327.914062" r="192" opacity="0.150000006" stroke="rgb(150.96,150.96,150.96)" stroke-opacity="0" stroke-width="0" />
+		</g>
+	</g>
+</svg>
