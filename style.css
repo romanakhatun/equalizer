@@ -7,7 +7,7 @@
   --secondary-color: rgb(255, 185, 100); /* Sunset */
 
   --background-color: rgb(252, 250, 249); /* Light Background */
-  --text-color: rgb(25, 24, 38); /* Dark Text / Dark BG */
+  --base-variants: rgb(25, 24, 38); /* Dark Text / Dark BG */
 
   --pattern-responsive-width: calc(
     266px + (312 - 266) * ((100vw - 768px) / (1440 - 768))
@@ -54,7 +54,6 @@ h2 {
 
 .hero {
   position: relative;
-  overflow: hidden;
   min-height: 100vh;
 }
 
@@ -113,6 +112,102 @@ h2 {
 .hero-content {
   width: 70%;
   z-index: 1;
+  padding-bottom: 321px;
+}
+
+/* Premium EQ app for Android and iOS */
+.premium-eq {
+  position: relative;
+  min-height: 100vh;
+}
+.oval-premium {
+  bottom: 0;
+  right: -30px;
+  background: rgba(255, 146, 1, 1);
+  position: absolute;
+  border-radius: 100%;
+  width: 384px;
+  height: 384px;
+  /* opacity: 0.15; */
+  filter: blur(135px);
+  z-index: -11;
+}
+.premium-eq-container {
+  max-width: 1275px;
+  margin: 0 auto;
+  padding: 0 30px;
+  border: 1px solid blue;
+  position: relative;
+}
+.premium-eq-bg {
+  height: 600px;
+  background: var(--base-variants);
+  color: white;
+  position: relative;
+  /* z-index: -10; */
+}
+.premium-eq-image img {
+  /* width: clamp(270px, 6.2vw, 312px);
+  height: clamp(336px, 12.7vh, 642px); */
+  width: 312px;
+  height: 642px;
+  position: absolute;
+  top: -213px;
+  left: 102px;
+  object-fit: contain;
+  /* z-index: 9; */
+}
+.premium-eq-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* z-index: 100; */
+}
+.premium-eq-content {
+  border-radius: 12px;
+  background: rgba(250, 116, 83, 1);
+  position: absolute;
+  right: 95px;
+  bottom: -115px;
+  width: 446px;
+  padding: 58px 59px 48px 54px;
+  /* z-index: 10; */
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.price h1 {
+  font-size: 65px;
+  font-weight: 700;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.btn {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.18px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 12px;
+}
+.btn-ios {
+  background: rgba(25, 24, 38, 1);
+  color: white;
+}
+.btn-android {
+  background: #fff;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -121,7 +216,10 @@ h2 {
     line-height: clamp(48px, 4vw, 64px);
     letter-spacing: -0.73px;
   }
-
+  .body1 {
+    font-size: 18px;
+    line-height: 28px;
+  }
   .oval-1 {
     top: -112px;
     left: -254px;
@@ -154,6 +252,10 @@ h2 {
 @media screen and (max-width: 375px) {
   h1 {
     letter-spacing: -0.45px;
+  }
+  .body1 {
+    font-size: 16px;
+    line-height: 26px;
   }
   .oval {
     width: 281.4px;
