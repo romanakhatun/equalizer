@@ -2,15 +2,13 @@
 
 :root {
   --font-family: "IBM Plex Sans", sans-serif;
-  --primary-color: #66e2dc; /* Aqua */
-  --accent-color: #fa7453; /* Coral */
-  --secondary-color: #ffb964; /* Sunset */
+  --primary-color: rgb(102, 226, 220); /* Aqua */
+  --accent-color: rgb(250, 116, 83); /* Coral */
+  --secondary-color: rgb(255, 185, 100); /* Sunset */
 
-  --background-color: #fcfaf9; /* Light Background */
-  --text-color: #191826; /* Dark Text / Dark BG */
+  --background-color: rgb(252, 250, 249); /* Light Background */
+  --text-color: rgb(25, 24, 38); /* Dark Text / Dark BG */
 
-  --h1-size: 88px;
-  --h1-weight: 700px;
   --pattern-responsive-width: calc(
     266px + (312 - 266) * ((100vw - 768px) / (1440 - 768))
   );
@@ -28,11 +26,12 @@ body {
 /* Common design */
 
 h1 {
-  font-size: 5.6rem;
+  font-size: clamp(64px, 3.5vw, 88px);
   font-weight: 700;
   line-height: 88px;
   letter-spacing: -1px;
 }
+
 h2 {
   font-size: 40px;
   font-weight: 700;
@@ -65,10 +64,12 @@ h2 {
   width: 384px;
   height: 384px;
   filter: blur(135px);
+  z-index: -11;
 }
+
 .oval-1 {
-  top: -150px;
-  left: -150px;
+  top: -112px;
+  left: -146px;
   background: rgba(255, 146, 1, 1);
   opacity: 0.15;
 }
@@ -97,7 +98,6 @@ h2 {
   top: 0;
   right: 0;
   transform: translate(0, -65px);
-  border: 1px solid red;
   z-index: -1;
 }
 
@@ -112,47 +112,71 @@ h2 {
 }
 .hero-content {
   width: 70%;
-  border: 1px solid red;
   z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 64px;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: clamp(48px, 4vw, 64px);
     letter-spacing: -0.73px;
   }
 
+  .oval-1 {
+    top: -112px;
+    left: -254px;
+  }
+  .oval-2 {
+    top: 41px;
+    right: 39px;
+  }
+  .oval-3 {
+    right: 39px;
+    top: 312px;
+  }
   .logo {
     margin-bottom: 64px;
     margin-top: 32px;
   }
   .hero-content {
     max-width: 520px;
-    width: 100%;
   }
   .hero-pattern img {
     width: 266px;
     height: 400px;
   }
   .hero-pattern img {
-    width: clamp(200px, 35vw, 266px); /* min:200px, max:266px */
+    width: clamp(150px, 35vw, 266px);
     height: auto;
   }
 }
 
 @media screen and (max-width: 375px) {
   h1 {
-    font-size: 2.5rem;
-    line-height: 48px;
     letter-spacing: -0.45px;
   }
+  .oval {
+    width: 281.4px;
+    height: 281.4px;
+  }
+  .oval-1 {
+    display: none;
+  }
+  .oval-2 {
+    right: -159px;
+    top: -104px;
+  }
+  .oval-3 {
+    right: -159px;
+    top: 94px;
+  }
+
   .hero-container {
     padding: 0 24px;
   }
+
   .hero-content {
-    max-width: 100%;
+    width: 100%;
   }
 
   .hero-pattern img {
