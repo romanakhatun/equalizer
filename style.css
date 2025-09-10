@@ -17,9 +17,13 @@
   );
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
   font-family: var(--font-family);
 }
 
@@ -54,7 +58,8 @@ h2 {
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  border: 1px solid red;
 }
 
 .oval {
@@ -62,7 +67,7 @@ h2 {
   border-radius: 100%;
   width: 384px;
   height: 384px;
-  filter: blur(135px);
+  filter: blur(100px);
   z-index: -11;
 }
 
@@ -113,13 +118,16 @@ h2 {
   width: 70%;
   z-index: 1;
   padding-bottom: 321px;
+  border: 1px solid red;
 }
 
-/* Premium EQ app for Android and iOS */
+/* Premium EQ */
 .premium-eq {
   position: relative;
   min-height: 100vh;
+  margin-bottom: 202px;
 }
+
 .oval-premium {
   bottom: 0;
   right: -30px;
@@ -128,15 +136,14 @@ h2 {
   border-radius: 100%;
   width: 384px;
   height: 384px;
-  /* opacity: 0.15; */
+  opacity: 0.15;
   filter: blur(135px);
-  z-index: -11;
+  z-index: 1;
 }
 .premium-eq-container {
   max-width: 1275px;
   margin: 0 auto;
   padding: 0 30px;
-  border: 1px solid blue;
   position: relative;
 }
 .premium-eq-bg {
@@ -144,35 +151,43 @@ h2 {
   background: var(--base-variants);
   color: white;
   position: relative;
-  /* z-index: -10; */
+  z-index: 2;
+  border-radius: 12px;
 }
-.premium-eq-image img {
+.premium-eq-illustration {
+  z-index: 3;
+}
+.premium-eq-illustration img {
   /* width: clamp(270px, 6.2vw, 312px);
   height: clamp(336px, 12.7vh, 642px); */
   width: 312px;
   height: 642px;
   position: absolute;
-  top: -213px;
   left: 102px;
   object-fit: contain;
-  /* z-index: 9; */
+  top: 0;
+  transform: translateY(-213px);
 }
 .premium-eq-pattern {
   position: absolute;
   top: 0;
-  right: 0;
-  /* z-index: 100; */
+  left: 0;
+  z-index: -1;
+  left: clamp(40px, 23.3vw, 336px);
 }
+
 .premium-eq-content {
-  border-radius: 12px;
-  background: rgba(250, 116, 83, 1);
   position: absolute;
   right: 95px;
-  bottom: -115px;
-  width: 446px;
+  bottom: 0;
+  border-radius: 12px;
+  background: var(--accent-color);
+  transform: translateY(115px);
+  width: clamp(399px, calc(399px + 6.9vw), 446px);
   padding: 58px 59px 48px 54px;
-  /* z-index: 10; */
+  z-index: 1000;
 }
+
 .price {
   display: flex;
   align-items: center;
@@ -202,7 +217,7 @@ h2 {
   border-radius: 12px;
 }
 .btn-ios {
-  background: rgba(25, 24, 38, 1);
+  background: var(--base-variants);
   color: white;
 }
 .btn-android {
@@ -246,6 +261,10 @@ h2 {
   .hero-pattern img {
     width: clamp(150px, 35vw, 266px);
     height: auto;
+  }
+
+  .premium-eq-content {
+    width: 399px;
   }
 }
 
