@@ -5,8 +5,6 @@
   --primary-color: rgb(102, 226, 220); /* Aqua */
   --accent-color: rgb(250, 116, 83); /* Coral */
   --secondary-color: rgb(255, 185, 100); /* Sunset */
-
-  --background-color: rgb(252, 250, 249); /* Light Background */
   --base-variants: rgb(25, 24, 38); /* Dark Text / Dark BG */
 
   --pattern-responsive-width: calc(
@@ -26,8 +24,8 @@ html,
 body {
   font-family: var(--font-family);
 }
-/* Common design */
 
+/* Common design */
 h1 {
   font-size: clamp(64px, 3.5vw, 88px);
   font-weight: 700;
@@ -215,12 +213,56 @@ h2 {
 .btn-ios {
   background: var(--base-variants);
   color: white;
+  transition: all 0.5s ease;
 }
 .btn-android {
   background: #fff;
   color: black;
+  transition: all 0.4s ease;
+}
+.btn-ios:hover {
+  background: var(--primary-color);
+}
+.btn-android:hover {
+  background: var(--secondary-color);
 }
 
+/* Start Footer */
+.footer {
+  max-width: 1275px;
+  margin: 0 auto;
+  padding: 0 30px;
+  margin-bottom: 50px;
+}
+.footer-wrap {
+  display: grid;
+  grid-template-areas: "logo info info social";
+}
+
+.footer-logo {
+  grid-area: logo;
+}
+.footer-info {
+  grid-area: info;
+  max-width: 366px;
+}
+.social-icon {
+  grid-area: social;
+  justify-self: flex-end;
+  align-self: center;
+  display: flex;
+  gap: 15px;
+}
+.social-icon i {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+.social-icon i:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: clamp(40px, 6vw, 64px);
@@ -279,6 +321,16 @@ h2 {
     transform: translateY(-138px);
     left: clamp(30px, calc(-2.44px + 8.6514vw), 64px);
   }
+
+  /* footer */
+  .footer-wrap {
+    grid-template-areas:
+      "logo logo social"
+      "info info social";
+  }
+  .footer-info {
+    margin-top: 32px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -333,6 +385,7 @@ h2 {
     width: 100%;
     right: 0;
     transform: translateY(300px);
+    margin-bottom: 160px;
   }
   .illustration {
     top: 21%;
@@ -347,5 +400,17 @@ h2 {
     transform: translate(-50%, -50%);
     width: 280px;
     height: 420px;
+  }
+
+  /* Footer */
+  .footer-wrap {
+    grid-template-areas:
+      "logo"
+      "info"
+      "social";
+  }
+  .social-icon {
+    justify-self: unset;
+    margin-top: 64px;
   }
 }
