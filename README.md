@@ -1,5 +1,5 @@
 # 📦 CSS `box-sizing: border-box`
-
+  
 ## 🔹 Introduction
 Normally in css, when you set an element's width or height that number only applies to the `content box`. The padding and border get added on top of that size, making the element larger than you expected.
 
@@ -15,7 +15,7 @@ div {
 
 
 ## 🔹 Using ``border-box``
-Now, if you use **box-sizing: border-box;**, the width and height include the content + padding + border together.
+Now, if you use `box-sizing: border-box;`, the width and height include the **content + padding + border** together.
 
 So the box never grows larger than what you set.
 
@@ -29,11 +29,15 @@ div {
 ```
 👉 The total width = exactly **200px**, not 260px.
 
+## 🔹 Why Use It?
+- Makes layouts predictable
+- Easier to control sizes
+- Avoids unexpected overflow issues
 
-## ✅ In practice,
+## 🔹 Best Practice
+Apply it to all elements for consistent behavior:
 ```js
 * {
   box-sizing: border-box;
 }
 ```
-It makes layouts predictable and easier to control.
