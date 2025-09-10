@@ -260,7 +260,7 @@ h2 {
   }
 
   .premium-eq-container {
-    padding: clamp(5px, calc(-24.58px + 7.888vw), 36px);
+    padding: 0 clamp(5px, calc(-24.58px + 7.888vw), 36px);
   }
 
   .premium-eq-content {
