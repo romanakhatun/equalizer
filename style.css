@@ -26,7 +26,6 @@ html,
 body {
   font-family: var(--font-family);
 }
-
 /* Common design */
 
 h1 {
@@ -58,8 +57,8 @@ h2 {
 
 .hero {
   position: relative;
-  /* min-height: 100vh; */
-  border: 1px solid red;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 .oval {
@@ -67,7 +66,7 @@ h2 {
   border-radius: 100%;
   width: 384px;
   height: 384px;
-  filter: blur(100px);
+  filter: blur(135px);
   z-index: -11;
 }
 
@@ -118,7 +117,6 @@ h2 {
   width: 70%;
   z-index: 1;
   padding-bottom: 321px;
-  border: 1px solid red;
 }
 
 /* Premium EQ */
@@ -130,16 +128,17 @@ h2 {
 
 .oval-premium {
   bottom: 0;
-  right: -30px;
+  right: 0;
   background: rgba(255, 146, 1, 1);
   position: absolute;
   border-radius: 100%;
   width: 384px;
   height: 384px;
   opacity: 0.15;
-  filter: blur(135px);
   z-index: 1;
+  filter: blur(135px);
 }
+
 .premium-eq-container {
   max-width: 1275px;
   margin: 0 auto;
@@ -154,12 +153,8 @@ h2 {
   z-index: 2;
   border-radius: 12px;
 }
-.premium-eq-illustration {
-  z-index: 3;
-}
-.premium-eq-illustration img {
-  /* width: clamp(270px, 6.2vw, 312px);
-  height: clamp(336px, 12.7vh, 642px); */
+
+.illustration {
   width: 312px;
   height: 642px;
   position: absolute;
@@ -167,6 +162,7 @@ h2 {
   object-fit: contain;
   top: 0;
   transform: translateY(-213px);
+  z-index: 3;
 }
 .premium-eq-pattern {
   position: absolute;
@@ -263,8 +259,25 @@ h2 {
     height: auto;
   }
 
+  .premium-eq-container {
+    padding: clamp(5px, calc(-24.58px + 7.888vw), 36px);
+  }
+
   .premium-eq-content {
-    width: 399px;
+    width: clamp(350px, calc(303.24px + 12.4682vw), 399px);
+    right: clamp(0px, calc(-49.48px + 13.99vw), 58px);
+    padding: 48px;
+    transform: translateY(96px);
+  }
+  .premium-eq-pattern {
+    width: 280px;
+    height: 420px;
+  }
+  .illustration {
+    width: 270.21px;
+    height: 556px;
+    transform: translateY(-138px);
+    left: clamp(30px, calc(-2.44px + 8.6514vw), 64px);
   }
 }
 
@@ -283,13 +296,21 @@ h2 {
   .oval-1 {
     display: none;
   }
+  .oval-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   .oval-2 {
     right: -159px;
     top: -104px;
+    position: absolute;
   }
   .oval-3 {
     right: -159px;
     top: 94px;
+    position: absolute;
   }
 
   .hero-container {
@@ -302,5 +323,29 @@ h2 {
 
   .hero-pattern img {
     display: none;
+  }
+
+  .premium-eq-container {
+    padding: 0;
+    width: 100%;
+  }
+  .premium-eq-content {
+    width: 100%;
+    right: 0;
+    transform: translateY(300px);
+  }
+  .illustration {
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 208.97px;
+    height: 430px;
+  }
+  .premium-eq-pattern {
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 420px;
   }
 }
